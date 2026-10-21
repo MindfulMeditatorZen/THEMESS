@@ -1,0 +1,56 @@
+/* Theme 1: Light Purple (default) */
+:root {
+  --bg: linear-gradient(135deg, #667eea, #764ba2);
+  --card-bg: #ffffff;
+  --text: #222222;
+  --shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  --radius: 20px;
+}
+
+/* Theme 2: Dark Neon (when checkbox is checked) */
+:root:has(#theme:checked) {
+  --bg: #0f0c29;
+  --card-bg: #16213e;
+  --text: #f1f1f1;
+  --shadow: 0 0 25px rgba(0, 245, 212, 0.4);
+  --radius: 6px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+#theme { display: none; }
+
+.switch {
+  padding: 8px 20px;
+  background: var(--card-bg);
+  color: var(--text);
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
+
+.card {
+  background: var(--card-bg);
+  max-width: 320px;
+  padding: 32px 24px;
+  border-radius: var(--radius);
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.title { color: var(--accent); font-weight: 600; margin: 4px 0 12px; }
+
+.bio { color: var(--muted); font-size: 0.9rem; line-height: 1.5; margin-bottom: 20px; }
